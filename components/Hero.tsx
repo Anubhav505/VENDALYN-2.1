@@ -3,8 +3,11 @@ import gsap from "gsap";
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Hero = () => {
   useEffect(() => {
+
     gsap.to(".heroVideo", {
       clipPath: "circle(0% at 50% 50%)",
       scrollTrigger: {
@@ -29,8 +32,8 @@ const Hero = () => {
       scrollTrigger: {
         trigger: ".heroT",
         start: "bottom 50%",
-        end:"bottom -20%",
-        scrub:1
+        end: "bottom -20%",
+        scrub: 1,
       },
     });
   }, []);

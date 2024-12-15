@@ -42,14 +42,12 @@ const Footer = () => {
       <div className="h-full w-full flex flex-col justify-evenly">
         <div className="ft1">
           <h1 className="text-white font-semibold text-4xl nFont pl-32">
-            Let's Empower Growth
+            Let&apos;s Empower Growth
           </h1>
         </div>
         <div className="ft2 flex flex-col items-end pr-44">
           <div>
-            <h1 className="font-semibold text-4xl nFont">
-              Connect With Us
-            </h1>
+            <h1 className="font-semibold text-4xl nFont">Connect With Us</h1>
             <h1 className="font-semibold text-2xl">
               <a
                 href="mailto:vendalyn.web@gmail.com"
