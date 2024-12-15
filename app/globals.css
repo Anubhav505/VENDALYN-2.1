@@ -2,20 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body{
+  background-color: #1b1b1b;
+  overflow-x: hidden;
+  color: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "NB International Pro";
+  src: url("../public/fonts/NBInternationalProBoo.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.nFont {
+  font-family: "NB International Pro", sans-serif;
+}
+
+@font-face {
+  font-family: "Rejoice Headline";
+  src: url("../public/fonts/Rejouice-Headline.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hFont {
+  font-family: "Rejoice Headline", sans-serif;
 }
