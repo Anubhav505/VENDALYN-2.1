@@ -66,7 +66,7 @@ const Hero = () => {
               scrub: 1,
             },
           })
-          .to(".heroBrand span", {
+          scrollTl.to(".heroBrand span", {
             opacity: 0,
             x: "0%",
           });
