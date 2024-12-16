@@ -46,8 +46,9 @@ const Footer = () => {
           stagger: 0.1,
           scrollTrigger: {
             trigger: ".brand",
-            start: "-80% 90%",
-            end: "-80% 75%",
+            start: "-80% 80%",
+            end: "-80% 80%",
+            // markers:true,
             scrub: 1,
           },
         });

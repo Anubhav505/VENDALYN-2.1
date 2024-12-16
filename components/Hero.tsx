@@ -7,7 +7,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   useEffect(() => {
-
+    ScrollTrigger.matchMedia({
+"(min-width: 601px)": function () {
     gsap.to(".heroVideo", {
       clipPath: "circle(0% at 50% 50%)",
       scrollTrigger: {
@@ -36,6 +37,57 @@ const Hero = () => {
         scrub: 1,
       },
     });
+  },
+    
+      "(max-width: 600px)": function () {
+        gsap.to(".heroVideo", {
+          clipPath: "circle(0% at 50% 50%)",
+          scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: "bottom top",
+            pin: true,
+            scrub: 2,
+          },
+        });
+
+        gsap.from(".heroBrand span", {
+          delay: 0.5,
+          opacity: 0,
+          y: "50%",
+          stagger: 0.08,
+        });
+
+        const scrollTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: ".heroBrand",
+              start: "center 75%",
+              end: "center 50%",
+              scrub: 1,
+            },
+          })
+          .to(".heroBrand span", {
+            opacity: 0,
+            x: "0%",
+          });
+
+        gsap.from(".heroTC", {
+          scale: 10,
+          stagger: 0.08,
+          scrollTrigger: {
+            trigger: ".heroT",
+            start: "bottom 50%",
+            end: "bottom -20%",
+            scrub: 1,
+          },
+        });
+      },
+    });
+
+     return () => {
+       ScrollTrigger.clearMatchMedia();
+     };
+
   }, []);
 
   return (
@@ -74,7 +126,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="heroBrand h-[50vh] w-full flex justify-center items-end text-[270px] font-semibold overflow-hidden hFont z-50 max-sm:text-7xl">
+        <div className="heroBrand h-[50vh] w-full flex justify-center items-end text-[270px] font-semibold overflow-hidden hFont z-50  max-sm:text-7xl">
           <span className="flex items-center h-[324px]">V</span>
           <span className="flex items-center h-[324px]">E</span>
           <span className="text-[350px] pb-[44px] h-[324px] flex items-center max-sm:text-8xl max-sm:pb-4">
