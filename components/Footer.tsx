@@ -8,117 +8,55 @@ gsap.registerPlugin(ScrollTrigger);
 const Footer = () => {
   useEffect(() => {
 
-    ScrollTrigger.matchMedia({
-      "(min-width: 601px)": function () {
-        gsap.from(".brand span", {
-          y: "-75%",
-          stagger: 0.05,
-          scrollTrigger: {
-            trigger: ".brand",
-            start: "-75% 50%",
-            end: "top 50%",
-            scrub: 1,
-          },
-        });
-        gsap.from(".ft1", {
-          x: -600,
-          scrollTrigger: {
-            trigger: ".ft1",
-            start: "-300% center",
-            end: "200% center",
-            scrub: 1,
-          },
-        });
-        gsap.from(".ft2", {
-          x: 600,
-          scrollTrigger: {
-            trigger: ".ft1",
-            start: "-300% center",
-            end: "200% center",
-            scrub: 1,
-          },
-        });
+    gsap.from(".brand span", {
+      y: "-60%",
+      stagger: 0.05,
+      scrollTrigger: {
+        trigger: ".brand",
+        start: "-75% 50%",
+        end: "top 50%",
+        scrub: 1,
       },
-
-      "(max-width: 600px)": function () {
-        gsap.from(".brand span", {
-          y: "-50%",
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: ".brand",
-            start: "-80% 80%",
-            end: "-80% 80%",
-            // markers:true,
-            scrub: 1,
-          },
-        });
-
-        gsap.from(".ft1", {
-          x: -200,
-          scrollTrigger: {
-            trigger: ".ft1",
-            start: "-80% 90%",
-            end: "-80% 75%",
-            scrub: 1,
-          },
-        });
-
-        gsap.from(".ft2", {
-          x: 200,
-          scrollTrigger: {
-            trigger: ".ft1",
-            start: "-80% 90%",
-            end: "-80% 75%",
-            scrub: 1,
-          },
-        });
-      },
-
-    })
+    });
     
-     return () => {
-       ScrollTrigger.clearMatchMedia();
-     };
+    gsap.from(".ft", {
+      opacity:0,
+      y:-40,
+      scrollTrigger: {
+        trigger: ".ft",
+        start: "top center",
+        end: "center center",
+        scrub: 1,
+      },
+    });
 
   }, []);
 
   return (
-    <div className="h-screen w-full flex flex-col max-sm:overflow-hidden max-sm:h-[240px] ">
-      <div className="h-full max-sm:h-1/2 w-full flex flex-col justify-evenly">
-        <div className="ft1">
-          <h1 className="font-semibold text-4xl nFont pl-32 max-sm:text-xl max-sm:pl-0 max-sm:text-center">
-            Let&apos;s Empower Growth
-          </h1>
-        </div>
-        <div className="ft2 flex flex-col items-end pr-44 max-sm:pr-0 max-sm:items-center max-sm:text-center">
-          <div>
-            <h1 className="font-semibold text-4xl nFont max-sm:text-xl">
-              Connect With Us
-            </h1>
-            <h1 className="font-semibold text-2xl">
-              <a
-                href="mailto:vendalyn.web@gmail.com"
-                className="hover:underline max-sm:text-xl"
-              >
-                vendalyn.web@gmail.com
-              </a>
-            </h1>
-          </div>
+    <div className="h-screen w-full flex flex-col overflow-hidden">
+      <div className="ft h-1/2 w-full flex flex-col justify-evenly text-center nFont font-semibold">
+        <h1 className="text-[2.12vw] max-sm:text-[3vmax]">
+          Let&apos;s Empower Growth
+        </h1>
+        <div className="flex flex-col">
+          <h1 className="text-[2.12vw] max-sm:text-[3vmax]">Connect With Us</h1>
+          <a
+            href="mailto:vendalyn.web@gmail.com"
+            className="text-[1.41vw] max-sm:text-[3vmax] hover:underline"
+          >
+            vendalyn.web@gmail.com
+          </a>
         </div>
       </div>
-      <div className="brand max-sm:h-1/2 h-full w-ful flex justify-center items-center text-[270px] font-semibold overflow-hidden hFont max-sm:text-7xl">
-        <span className="flex items-center h-[324px]">V</span>
-        <span className="flex items-center h-[324px]">E</span>
-        <span className="text-[350px] pb-[44px] h-[324px] flex items-center max-sm:text-8xl max-sm:pb-4">
-          n
-        </span>
-        <span className="flex items-center h-[324px]">D</span>
-        <span className="flex items-center h-[324px]">A</span>
-        <span className="flex items-center h-[324px]">L</span>
-        <span className="flex items-center h-[324px]">Y</span>
-        <span className="text-[350px] pb-[44px] h-[324px] flex items-center max-sm:text-8xl max-sm:pb-4">
-          n
-        </span>
+      <div className="brand h-1/2 w-full flex justify-center hFont text-[16vw] font-semibold overflow-hidden">
+        <span className="flex items-center">V</span>
+        <span className="flex items-center">E</span>
+        <span className="flex items-center">N</span>
+        <span className="flex items-center">D</span>
+        <span className="flex items-center">A</span>
+        <span className="flex items-center">L</span>
+        <span className="flex items-center">Y</span>
+        <span className="flex items-center">N</span>
       </div>
     </div>
   );
